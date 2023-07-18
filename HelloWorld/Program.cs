@@ -10,8 +10,19 @@ namespace HelloWorld
             //Exercise1();
             //Exercise2(1,2);
             //Exercise3();
-            Exercise4();
+            //Exercise4();
+            //Exercise5();
+            //Exercise6();
+            //Exercise7();
+            //Exercise8();
+            Exercise9();
+
+
         }
+
+        #region First Exercises
+
+        #region Exercise 1
 
         public static void Exercise1()
         {
@@ -45,6 +56,9 @@ namespace HelloWorld
             #endregion
         }
 
+        #endregion
+
+        #region Exercise 2
         public static void Exercise2(int number1, int number2)
         {
             #region Exercise 2
@@ -68,6 +82,9 @@ namespace HelloWorld
 
         }
 
+        #endregion
+
+        #region Exercise 3
         public static void Exercise3()
         {
             #region Exercise 3
@@ -101,6 +118,9 @@ namespace HelloWorld
 
         }
 
+        #endregion
+
+        #region Exercise 4
         public static void Exercise4()
         {
             #region Exercise 4
@@ -163,6 +183,222 @@ namespace HelloWorld
             return demeritPoints;
             
         }
+
+        #endregion
+
+        #endregion
+
+        #region Second Exercises
+
+        #region Exercise 5
+
+        public static void Exercise5()
+        {
+            #region Exercise 5
+
+            //Write a program to count how many numbers between 1 and 100 are divisible
+            //by 3 with no remainder. Displayh the count
+
+            int counter = 0;
+
+            for (int i = 1; i <= 100; i++)
+            {
+                if(i % 3 == 0)
+                {
+                    counter++;
+                }
+            }
+
+            Console.WriteLine(counter);
+
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Exercise 6
+
+        public static void Exercise6()
+        {
+            #region Exercise 6
+
+            //Write a program and continuously ask the user to enter
+            //a number or ok to exit. Calculate the sum of all the previously entered
+            //numberrs and display it on the console.
+
+            int sum = 0;
+
+            string userInput = "";
+
+
+            while (true)
+            {
+                Console.WriteLine("Insert a number or write 'ok' to leave");
+                userInput = Console.ReadLine();
+
+                if (userInput.ToLower().Equals("ok"))
+                {
+                    break;
+                }
+
+                sum = sum + int.Parse(userInput);
+            }
+
+            Console.WriteLine("The sum of all numbers is : {0}" , sum);
+
+
+
+
+            Environment.Exit(0);
+
+
+
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Exericise7
+
+        public static void Exercise7()
+        {
+            #region Exercise 7
+
+            //Write a program and ask the user to enter a number.
+            //Compute the factorial of the number and print it on the console.
+            //For example, if the user enters 5, the program should create 5x4x3x2x1
+            //and the display it as 5! = 120.
+
+
+            //Ask the user a number
+            Console.WriteLine("Please insert a number: ");
+            string input = Console.ReadLine();
+
+            int factorial = 1;
+
+
+            int[] numbers = new int[int.Parse(input) + 1];
+
+            for(int i = 1;  i < numbers.Length; i++)
+            {
+                numbers[i] = i;
+
+
+                factorial = factorial * numbers[i];
+
+            }
+
+            Console.WriteLine("The factorial of {0} is : {1}" ,input, factorial);
+
+            #endregion
+
+        }
+
+        #endregion
+
+        #region Exercise 8
+
+        public static void Exercise8()
+        {
+            #region Exercise 8
+
+            //Write a program that picks a random number between 1 and 10. give the user
+            //4 chances to guess the number. if the user guesses the number display "You won"
+            //otherwise, display "You lost"
+
+            Random random = new Random();
+
+            //I put eleven in order to the program also generates the number 10
+            int randomNumber = random.Next(1,11);
+
+            //Number of tries
+            int userTries = 4;
+
+            string userInput = "";
+
+            Console.WriteLine("Random number generated : " + randomNumber);
+
+            
+
+            for(int i = 0;  i < userTries; i++)
+            {
+                //Ask the user to guess the number
+                Console.WriteLine("Guess the number between 1 and 10");
+                userInput = Console.ReadLine();
+
+                if (userInput == randomNumber.ToString())
+                {
+                    Console.WriteLine("You Won!!!");
+                    break;
+                }
+
+            }
+            
+            if(userInput != randomNumber.ToString())
+            Console.WriteLine("You Lost!!!");
+
+
+
+            #endregion
+        }
+
+
+        #endregion
+
+        #region Exercise 9
+
+        public static void Exercise9()
+        {
+            #region Exercise 9
+
+            //Write a program and ask the user to enter a series of numbers
+            //seperated by comma. Find the maximum of the numbers and display it
+            //on the console. For example, if the user enters "5,3,8,1,4" the program should
+            //display 8.
+
+            //string input = Console.ReadLine();
+
+            //string[] inputArray = input.Split(',');
+
+            //int[] inputNumbers = new int[input.Length];
+
+            //Console.WriteLine(inputArray);
+
+            Console.WriteLine("Insert numbers divided by a comma");
+            string input = Console.ReadLine();
+
+            string[] numbers = input.Split(',');
+
+            // Assume the first number is the max 
+            int max = 0;
+
+            foreach (string numero in numbers)
+            {
+                int number = int.Parse(numero);
+                if (number > max)
+                    max = number;
+            }
+
+            Console.WriteLine("Max is {0} " , max);
+
+
+
+
+
+
+
+
+
+            #endregion
+        }
+
+        #endregion
+
+        #endregion
+
+
 
     }
 
