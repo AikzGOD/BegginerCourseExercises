@@ -13,29 +13,132 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            //Exercise1();
-            //Exercise2(1,2);
-            //Exercise3();
-            //Exercise4();
-            //Exercise5();
-            //Exercise6();
-            //Exercise7();
-            //Exercise8();
-            //Exercise9();
-            //Exercise10();
-            //Exercise11();
-            //Exercise12();
-            //Exercise13();
-            //Exercise14();
-            //Exercise15();
-            //Exercise16();
-            //Exercise17();
-            //Exercise18();
-            //Exercise19();
-            //Exercise20();
-            Exercise21();
+            Console.WriteLine("Insira o numero do exercicio que pretende visualizar (1 - 21)\n");
+            Console.WriteLine("*Nota - Exercicio 20 e 21 precisam de um path para um ficheiro .txt");
 
-          
+            string userInput = Console.ReadLine();
+            int choosedExercise;
+            if (int.TryParse(userInput, out choosedExercise) && choosedExercise > 0 && choosedExercise <= 21)
+            {
+                switch (choosedExercise)
+                {
+                    case 1:
+                        Console.Clear();
+                        Exercise1();
+                        break;
+
+                    case 2:
+                        Console.Clear();
+                        Exercise2(1,2);
+                        break;
+
+                    case 3:
+                        Console.Clear();
+                        Exercise3();
+                        break;
+
+                    case 4:
+                        Console.Clear();
+                        Exercise4();
+                        break;
+
+                    case 5:
+                        Console.Clear();
+                        Exercise5();
+                        break;
+
+                    case 6:
+                        Console.Clear();
+                        Exercise6();
+                        break;
+
+                    case 7:
+                        Console.Clear();
+                        Exercise7();
+                        break;
+
+                    case 8:
+                        Console.Clear();
+                        Exercise8();
+                        break;
+
+                    case 9:
+                        Console.Clear();
+                        Exercise9();
+                        break;
+
+                    case 10:
+                        Console.Clear();
+                        Exercise10();
+                        break;
+
+                    case 11:
+                        Console.Clear();
+                        Exercise11();
+                        break;
+
+                    case 12:
+                        Console.Clear();
+                        Exercise12();
+                        break;
+
+                    case 13:
+                        Console.Clear();
+                        Exercise13();
+                        break;
+
+                    case 14:
+                        Console.Clear();
+                        Exercise14();
+                        break;
+
+                    case 15:
+                        Console.Clear();
+                        Exercise15();
+                        break;
+
+                    case 16:
+                        Console.Clear();
+                        Exercise16();
+                        break;
+
+                    case 17:
+                        Console.Clear();
+                        Exercise17();
+                        break;
+
+                    case 18:
+                        Console.Clear();
+                        Exercise18();
+                        break;
+
+                    case 19:
+                        Console.Clear();
+                        Exercise19();
+                        break;
+
+                    case 20:
+                        Console.Clear();
+                        Exercise20();
+                        break;
+
+                    case 21:
+                        Console.Clear();
+                        Exercise21();
+                        break;
+                }
+            }
+            else
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Insira um numero válido");
+                Console.ResetColor();
+
+                Main(args);
+            }
+
+
 
         }
 
@@ -945,31 +1048,62 @@ namespace HelloWorld
             //Write a program that reads a text file and displays
             //the number of words.
 
-            string path = @"C:\Users\luaR\Desktop\Teste\teste.txt";
+            //Ask the user file Path for .txt file
 
-            StreamReader sr = new StreamReader(path);
+            Console.WriteLine("Insert a path for an txt file");
+            string userInput = Console.ReadLine();
+            string path = @"";
 
-            string line = sr.ReadLine();
+            path = path + userInput;
 
-            string[] words = null;
-
-
-            while (line != null)
+            if (String.IsNullOrEmpty(userInput))
             {
-                Console.WriteLine(line);
-                words = line.Split(' ');
-                
-                
-                
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("PathInvalid");
+                Console.ResetColor();
 
-                line = sr.ReadLine();
-                
+                path = @"";
 
+
+                Exercise20();
             }
 
-            sr.Close();
+            FileInfo fi = new FileInfo(path);
 
-            Console.WriteLine("Words in the file : {0}" , words.Length);
+
+            if(fi.Extension != ".txt")
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("PathInvalid");
+                Console.ResetColor();
+
+                Exercise20();
+            }
+            else
+            {
+                StreamReader sr = new StreamReader(path);
+
+                string line = sr.ReadLine();
+
+                string[] words = null;
+
+
+                while (line != null)
+                {
+                    Console.WriteLine(line);
+                    words = line.Split(' ');
+
+                    line = sr.ReadLine();
+                }
+
+                sr.Close();
+
+                Console.WriteLine("Words in the file : {0}", words.Length);
+            }
+
+            
 
             #endregion
 
@@ -984,45 +1118,71 @@ namespace HelloWorld
             //Write a program that reads a text file and displays
             //the longest word in the file
 
-            string path = @"C:\Users\luaR\Desktop\Teste\teste.txt";
+            Console.WriteLine("Insert a path for an txt file");
+            string userInput = Console.ReadLine();
+            string path = @"";
 
-            StreamReader sr = new StreamReader(path);
+            path = path + userInput;
 
-            string line = sr.ReadLine();
-
-            string[] words = null;
-
-
-            while (line != null)
+            if (String.IsNullOrEmpty(userInput))
             {
-                Console.WriteLine(line);
-                words = line.Split(' ');
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("PathInvalid");
+                Console.ResetColor();
+
+                path = @"";
 
 
-
-
-                line = sr.ReadLine();
-
-
+                Exercise21();
             }
 
-            sr.Close();
+            FileInfo fi = new FileInfo(path);
 
-            int higherIndex = 0;
-
-            for(int i = 0; i < words.Length - 1; i++)
+            if (fi.Extension != ".txt")
             {
-                if (words[i].Length > words[i + 1].Length)
-                {
-                    higherIndex = i;
-                }
-                else
-                {
-                    higherIndex = i + 1;
-                }
-            }
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("PathInvalid");
+                Console.ResetColor();
 
-            Console.WriteLine("Maior palavra : " + words[higherIndex].ToString());
+                Exercise21();
+            }
+            else
+            {
+                StreamReader sr = new StreamReader(path);
+
+                string line = sr.ReadLine();
+
+                string[] words = null;
+
+
+                while (line != null)
+                {
+                    Console.WriteLine(line);
+                    words = line.Split(' ');
+
+                    line = sr.ReadLine();
+                }
+
+                sr.Close();
+
+                int higherIndex = 0;
+
+                for (int i = 0; i < words.Length - 1; i++)
+                {
+                    if (words[i].Length > words[i + 1].Length)
+                    {
+                        higherIndex = i;
+                    }
+                    else
+                    {
+                        higherIndex = i + 1;
+                    }
+                }
+
+                Console.WriteLine("Maior palavra : " + words[higherIndex].ToString());
+            }
         }
 
         #endregion
