@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{B8560F71-00DB-4845-84BA-78F2311AEF77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BegginerCourse", "HelloWorld\BegginerCourse.csproj", "{B8560F71-00DB-4845-84BA-78F2311AEF77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedLimit.nUnitTests", "SpeedLimit.nUnitTests\SpeedLimit.nUnitTests.csproj", "{6D85BE1C-E151-441B-8849-9CDB7BDC77DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberValidator.nUnitTests", "NumberValidator.nUnitTests\NumberValidator.nUnitTests.csproj", "{F6922895-E04E-47DC-9E76-7DF80B939FEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{B8560F71-00DB-4845-84BA-78F2311AEF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8560F71-00DB-4845-84BA-78F2311AEF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8560F71-00DB-4845-84BA-78F2311AEF77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D85BE1C-E151-441B-8849-9CDB7BDC77DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D85BE1C-E151-441B-8849-9CDB7BDC77DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D85BE1C-E151-441B-8849-9CDB7BDC77DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D85BE1C-E151-441B-8849-9CDB7BDC77DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6922895-E04E-47DC-9E76-7DF80B939FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6922895-E04E-47DC-9E76-7DF80B939FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6922895-E04E-47DC-9E76-7DF80B939FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6922895-E04E-47DC-9E76-7DF80B939FEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

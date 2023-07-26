@@ -1,4 +1,4 @@
-﻿namespace HelloWorld
+﻿namespace BegginerCourse
 {
     internal partial class Program
     {

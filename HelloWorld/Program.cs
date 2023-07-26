@@ -1,144 +1,143 @@
-﻿using System;
+﻿using BegginerCourse.FirstExercises;
+using BegginerCourse.SecondExercises;
+using HelloWorld.SecondExercises;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Web;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace HelloWorld
+namespace BegginerCourse
 {
     internal partial class Program
     {
+
+        static IConsoleIO console = new ConsoleIO();
+
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Insira o numero do exercicio que pretende visualizar (1 - 21)\n");
-            Console.WriteLine("*Nota - Exercicio 20 e 21 precisam de um path para um ficheiro .txt");
+            console.WriteLine("Insira o numero do exercicio que pretende visualizar (1 - 21)\n");
+            console.WriteLine("*Nota - Exercicio 20 e 21 precisam de um path para um ficheiro .txt");
 
-            string userInput = Console.ReadLine();
-            int choosedExercise;
-            if (int.TryParse(userInput, out choosedExercise) && choosedExercise > 0 && choosedExercise <= 21)
+            string userInput = console.ReadLine();
+            NumberValidator numberValidator = new NumberValidator();
+            
+            if (numberValidator.IsMainNumberValid(userInput , out int number))
             {
-                switch (choosedExercise)
+                switch (number)
                 {
                     case 1:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise1();
                         break;
 
                     case 2:
-                        Console.Clear();
-                        Exercise2(1,2);
+                        console.ClearScreen();
+                        Exercise2();
                         break;
 
                     case 3:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise3();
                         break;
 
                     case 4:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise4();
                         break;
 
                     case 5:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise5();
                         break;
 
                     case 6:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise6();
                         break;
 
                     case 7:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise7();
                         break;
 
                     case 8:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise8();
                         break;
 
                     case 9:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise9();
                         break;
 
                     case 10:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise10();
                         break;
 
                     case 11:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise11();
                         break;
 
                     case 12:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise12();
                         break;
 
                     case 13:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise13();
                         break;
 
                     case 14:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise14();
                         break;
 
                     case 15:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise15();
                         break;
 
                     case 16:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise16();
                         break;
 
                     case 17:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise17();
                         break;
 
                     case 18:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise18();
                         break;
 
                     case 19:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise19();
                         break;
 
                     case 20:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise20();
                         break;
 
                     case 21:
-                        Console.Clear();
+                        console.ClearScreen();
                         Exercise21();
                         break;
                 }
             }
             else
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Insira um numero válido");
-                Console.ResetColor();
-
+                console.ClearScreen();
+                console.Warning("Insira numero válido");
                 Main(args);
             }
-
-
 
         }
 
@@ -146,165 +145,62 @@ namespace HelloWorld
 
         #region Exercise 1
 
+        /// <summary>
+        /// Exercise Write a program that asks a number between 1 and 10, if the inserted
+        /// number is valid, display "Valid" on the console. Otherwise, display "Invalid"
+        /// No Verification needed (Assume that the user enters a value in the format the program expects)
+        /// </summary>
         public static void Exercise1()
         {
-            #region Exercise 1
-
-            //Exercise Write a program that asks a number between 1 and 10, if the inserted 
-            //number is valid, display "Valid" on the console. Otherwise, display "Invalid"
-            //No Verification needed (Assume that the user enters a value in the format the program expects)
-
-
-            //Mocked Value
-            int userNumber;
-
-            Console.WriteLine("Insert a number between 1 and 10");
-
-            string userInput = Console.ReadLine();
-
-            userNumber = int.Parse(userInput);
-
-
-            //If statement to check if userNuber is higher than 10, or less than 0
-            if (userNumber < 0 || userNumber > 10)
-            {
-                Console.WriteLine("Invalid");
-            }
-            else
-            {
-                Console.WriteLine("Valid");
-            }
-
-            #endregion
+            FirstExercise firstExercise = new FirstExercise(console);
+            firstExercise.Run();
         }
 
         #endregion
 
         #region Exercise 2
-        public static void Exercise2(int number1, int number2)
+        /// <summary>
+        /// Write a program which takes two numbers from the console
+        /// and displays the maximum of the two.
+        /// </summary>
+        public static void Exercise2()
         {
-            #region Exercise 2
-
-            //Exercise : Write a program which takes two numbers from the console
-            //and displays the maximum of the two.
-
-            if (number1 > number2)
-            {
-                Console.WriteLine("{0} > {1} \nMax is {0}", number1, number2);
-            }
-            else if(number1 == number2){
-                Console.WriteLine("{1} = {0} \n They are equal", number1, number2);
-            }
-            else
-            {
-                Console.WriteLine("{1} > {0} \nMax is {1}", number1, number2);
-            }
-
-            #endregion
-
+            SecondExercise secondExercise = new SecondExercise(console);
+            secondExercise.Run();
         }
 
         #endregion
 
         #region Exercise 3
+        /// <summary>
+        /// Write a program and ask the user to enter the width and height of an Image.
+        /// Then tell if the image is landscape or portrait
+        /// </summary>
         public static void Exercise3()
         {
-            #region Exercise 3
-
-            //Write a program and ask the user to enter the width and height of an Image.
-            //Then tell if the image is landscape or portrait
-
-            //Ask the user the height of the image
-            Console.WriteLine("Please insert the image Height");
-            string imageHeightInput = Console.ReadLine();
-
-            //Ask the user the width of the image
-            Console.WriteLine("Please insert the image Width");
-            string imageWidthInput = Console.ReadLine();
-
-            //Convert the user Insert to int
-            int imageHeight = int.Parse(imageHeightInput);
-            int imageWidth = int.Parse(imageWidthInput);
-
-
-            if(imageHeight > imageWidth)
-            {
-                Console.WriteLine("The image is: " + Image.Portrait);
-            }
-            else
-            {
-                Console.WriteLine("The image is: " + Image.Landscape);
-            }
-
-            #endregion
+            ThirdExercise thirdExercise = new ThirdExercise(console);
+            thirdExercise.Run();
 
         }
 
         #endregion
 
         #region Exercise 4
+        /// <summary>
+        /// Write a program for a speed camera. Ask the user for the speed limit and once set,
+        /// ask the user for the speed of a car. if the value is less than the limit display "Ok"
+        /// if the value is above the limit the program should calculate the number of demerit
+        /// points. For every 5km/hr above the speed limit, 1 demerit point should be incurred
+        /// and displayed. If the number of the demerit points is above 12, the program should
+        /// display "License Suspended"
+        /// </summary>
         public static void Exercise4()
         {
-            #region Exercise 4
-
-            //Write a program for a speed camera. Ask the user for the speed limit and once set,
-            //ask the user for the speed of a car. if the value is less than the limit display "Ok"
-            //if the value is above the limit the program should calculate the number of demerit
-            //points. For every 5km/hr above the speed limit, 1 demerit point should be incurred
-            //and displayed. If the number of the demerit points is above 12, the program should
-            //display "License Suspended"
-
-            //Variable for the car Speed
-            int carSpeed;
-
-            //Variable for the speed Limit
-            int speedLimit;
-
-            //Ask the car Speed
-            Console.WriteLine("Insert the car speed: ");
-            string carSpeedInput = Console.ReadLine();
-
-            //Ask the speed limit
-            Console.WriteLine("Insert the speed limit: ");
-            string speedLimitInput = Console.ReadLine();
-
-            //Convert the input data
-            carSpeed = int.Parse(carSpeedInput);
-            speedLimit = int.Parse(speedLimitInput);
-
-            if (carSpeed <= speedLimit)
-            {
-                Console.WriteLine("Ok");
-            }
-            else
-            {
-
-                int demeritPoints = CalculateDemeritPoints(carSpeed,speedLimit);
-                if(demeritPoints > 12)
-                {
-                    Console.WriteLine("License Suspended");
-                }
-                else
-                {
-                    Console.WriteLine("Demerit Points: {0}" , demeritPoints);
-                }
-               
-            }
-
-
-
-            #endregion
+            FourthExercise fourthExercise = new FourthExercise(console);
+            fourthExercise.Run();
         }
 
-        public static int CalculateDemeritPoints(int carSpeed , int speedLimit)
-        {
-            const int kmPerDemeritPoint = 5;
 
-            int demeritPoints = (carSpeed - speedLimit) / kmPerDemeritPoint;
-
-            return demeritPoints;
-            
-        }
 
         #endregion
 
@@ -314,107 +210,46 @@ namespace HelloWorld
 
         #region Exercise 5
 
+        /// <summary>
+        /// Write a program to count how many numbers between 1 and 100 are divisible
+        /// by 3 with no remainder. Display the count
+        /// </summary>
         public static void Exercise5()
         {
-            #region Exercise 5
-
-            //Write a program to count how many numbers between 1 and 100 are divisible
-            //by 3 with no remainder. Displayh the count
-
-            int counter = 0;
-
-            for (int i = 1; i <= 100; i++)
-            {
-                if(i % 3 == 0)
-                {
-                    counter++;
-                }
-            }
-
-            Console.WriteLine(counter);
-
-
-            #endregion
+            FifthExercise fifthExercise = new FifthExercise(console);
+            fifthExercise.Run();
         }
 
         #endregion
 
         #region Exercise 6
 
+        /// <summary>
+        /// Write a program and continuously ask the user to enter
+        /// a number or ok to exit. Calculate the sum of all the previously entered
+        /// numbers and display it on the console.
+        /// </summary>
         public static void Exercise6()
         {
-            #region Exercise 6
-
-            //Write a program and continuously ask the user to enter
-            //a number or ok to exit. Calculate the sum of all the previously entered
-            //numberrs and display it on the console.
-
-            int sum = 0;
-
-            string userInput = "";
-
-
-            while (true)
-            {
-                Console.WriteLine("Insert a number or write 'ok' to leave");
-                userInput = Console.ReadLine();
-
-                if (userInput.ToLower().Equals("ok"))
-                {
-                    break;
-                }
-
-                sum = sum + int.Parse(userInput);
-            }
-
-            Console.WriteLine("The sum of all numbers is : {0}" , sum);
-
-
-
-
-            Environment.Exit(0);
-
-
-
-
-            #endregion
+            SixthExercise sixthExercise  = new SixthExercise(console);
+            sixthExercise.Run();
         }
 
         #endregion
 
-        #region Exericise7
+        #region Exercise 7
 
+        /// <summary>
+        ///Write a program and ask the user to enter a number.
+        ///Compute the factorial of the number and print it on the console.
+        ///For example, if the user enters 5, the program should create 5x4x3x2x1
+        ///and the display it as 5! = 120.
+        /// </summary>
         public static void Exercise7()
         {
-            #region Exercise 7
+            SeventhExercise seventhExercise = new SeventhExercise(console);
+            seventhExercise.Run();
 
-            //Write a program and ask the user to enter a number.
-            //Compute the factorial of the number and print it on the console.
-            //For example, if the user enters 5, the program should create 5x4x3x2x1
-            //and the display it as 5! = 120.
-
-
-            //Ask the user a number
-            Console.WriteLine("Please insert a number: ");
-            string input = Console.ReadLine();
-
-            int factorial = 1;
-
-
-            int[] numbers = new int[int.Parse(input) + 1];
-
-            for(int i = 1;  i < numbers.Length; i++)
-            {
-                numbers[i] = i;
-
-
-                factorial = factorial * numbers[i];
-
-            }
-
-            Console.WriteLine("The factorial of {0} is : {1}" ,input, factorial);
-
-            #endregion
 
         }
 
@@ -422,13 +257,14 @@ namespace HelloWorld
 
         #region Exercise 8
 
+        /// <summary>
+        /// Write a program that picks a random number between 1 and 10. give the user
+        /// 4 chances to guess the number. if the user guesses the number display "You won"
+        /// otherwise, display "You lost"
+        /// </summary>
         public static void Exercise8()
         {
             #region Exercise 8
-
-            //Write a program that picks a random number between 1 and 10. give the user
-            //4 chances to guess the number. if the user guesses the number display "You won"
-            //otherwise, display "You lost"
 
             Random random = new Random();
 
@@ -509,6 +345,7 @@ namespace HelloWorld
 
         #endregion
 
+
         #region Third Exercises
 
         #region Exercise 10
@@ -554,7 +391,7 @@ namespace HelloWorld
 
                 case 2:
                     //Shows Friend name
-                    Console.Clear();
+                    console.ClearScreen();
                     for(int i = 0; i < names.Count -1; i++)
                     {
                         Console.WriteLine(names[i] + " Liked your post");
@@ -564,7 +401,7 @@ namespace HelloWorld
                 case 3:
                     //Shows two friend name
 
-                    Console.Clear();
+                    console.ClearScreen();
 
                     for (int i = 0; i < names.Count - 1; i++)
                     {
@@ -773,7 +610,7 @@ namespace HelloWorld
                 //check if the array numbers is less than 5
                 if(numbers.Length < 5)
                 {
-                    Console.Clear();
+                    console.ClearScreen();
                     Console.WriteLine("Invalid List, try again");
                     continue;
                 }
@@ -1058,7 +895,7 @@ namespace HelloWorld
 
             if (String.IsNullOrEmpty(userInput))
             {
-                Console.Clear();
+                console.ClearScreen();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("PathInvalid");
                 Console.ResetColor();
@@ -1074,7 +911,7 @@ namespace HelloWorld
 
             if(fi.Extension != ".txt")
             {
-                Console.Clear();
+                console.ClearScreen();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("PathInvalid");
                 Console.ResetColor();
@@ -1126,7 +963,7 @@ namespace HelloWorld
 
             if (String.IsNullOrEmpty(userInput))
             {
-                Console.Clear();
+                console.ClearScreen();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("PathInvalid");
                 Console.ResetColor();
@@ -1141,7 +978,7 @@ namespace HelloWorld
 
             if (fi.Extension != ".txt")
             {
-                Console.Clear();
+                console.ClearScreen();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("PathInvalid");
                 Console.ResetColor();
@@ -1192,8 +1029,4 @@ namespace HelloWorld
 
 
     }
-
-
-
-
 }
