@@ -2,56 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BegginerCourse
 {
-    internal class StringOperations
+    public class StringOperations
     {
 
         public int CountNumberOfVowels(string text)
         {
-            int numberOfVowels = 0;
+            string pattern = @"[aeiouà-ú]";
 
-            char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
+            Regex regex = new Regex(pattern);
 
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (vowels.Contains(text[i]))
-                {
-                    numberOfVowels++;
-                }
-            }
-
-            return numberOfVowels;
-        }
-        public string [] SeparateStringValuesWithComma(string list)
-        {
-            string[] result = list.Split(',');
-
-            return result;
+            return regex.Matches(text.ToLower()).Count;
         }
 
-        public string[] SeparateStringValuesWithSpaces(string list)
-        {
-            string[] result = list.Split(' ');
-
-            return result;
-        }
-
-        public string[] SeparateStringValuesWithColon(string list)
-        {
-            string[] result = list.Split(':');
-
-            return result;
-        }
-
-        public string[] SeparateStringValuesWithHyphen(string list)
-        {
-            string[] result = list.Split('-');
-
-            return result;
-        }
 
         public string ReverseString(string line)
         {

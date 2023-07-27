@@ -45,7 +45,7 @@ namespace BegginerCourse.FourthExercises
 
             userInput = userInput.ToLower();
 
-            string[] userWords = _stringOperations.SeparateStringValuesWithSpaces(userInput);
+            string[] userWords = userInput.Split(' ');
 
             //put the rest of the letters excluding the first one to lower of each word
             for (int i = 0; i < userWords.Length; i++)

@@ -8,8 +8,6 @@ namespace BegginerCourse
 {
     internal interface INumberOperations
     {
-        int SummedNumbers();
-
         int CalculateFactorialNumber(int number);
 
     }

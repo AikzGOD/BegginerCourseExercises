@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace BegginerCourse
 {
-    internal class NumberOperations : INumberOperations
+    public class NumberOperations : INumberOperations
     {
-        private int _sumOfNumbers;
 
         private List<int> _numbers;
-        
 
         public int CalculateFactorialNumber(int number)
         {
@@ -32,11 +30,6 @@ namespace BegginerCourse
 
         }
 
-        public int SummedNumbers()
-        {
-            return _sumOfNumbers;
-        }
-
         public int SumThemAll(List<int> numberList)
         {
             int sum = 0;
@@ -44,8 +37,10 @@ namespace BegginerCourse
             {
                 sum += number;
             }
-            _sumOfNumbers = sum;
+            
             return sum;
+
+            
         }
 
         public bool NumbersAreConsecutive(string[] numbers)

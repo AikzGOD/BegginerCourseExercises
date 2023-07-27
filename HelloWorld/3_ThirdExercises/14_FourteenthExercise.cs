@@ -36,18 +36,18 @@ namespace HelloWorld.ThirdExercises
                 _console.WriteLine("Insert a list of numbers 5+ seperated by comma (e.g : 1,2,3): ");
                 string userInput = _console.ReadLine();
 
-                _stringOperations.SeparateStringValuesWithComma(userInput);
+                var numbers = userInput.Split(',');
 
                 //check if the array numbers is less than 5
-                if (_stringOperations.SeparateStringValuesWithComma(userInput).Length < 5)
+                if (numbers.Length < 5)
                 {
                     _console.Warning("Invalid Input");
                     continue;
                 }
 
-                for (int i = 0; i < _stringOperations.SeparateStringValuesWithComma(userInput).Length; i++)
+                for (int i = 0; i < numbers.Length; i++)
                 {
-                    numberList.Add(int.Parse(_stringOperations.SeparateStringValuesWithComma(userInput)[i]));
+                    numberList.Add(int.Parse(numbers[i]));
                 }
 
                 listIsCorrect = true;

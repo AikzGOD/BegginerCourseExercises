@@ -60,7 +60,7 @@ namespace BegginerCourse.FifthExercises
                 while (line != null)
                 {
                     _console.WriteLine(line);
-                    words = _stringOperations.SeparateStringValuesWithSpaces(line);
+                    words = line.Split(' ');
 
                     line = sr.ReadLine();
                 }

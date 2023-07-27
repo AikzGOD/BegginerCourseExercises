@@ -54,12 +54,7 @@ namespace BegginerCourse.SecondExercises
 
             NumberOperations numberOperations = new NumberOperations();
 
-            for (int i = 0; i < numberList.Count; i++)
-            {
-                numberOperations.SumThemAll(numberList);
-            }
-
-            _console.WriteLine("The sum of all numbers inputed is: " + numberOperations.SummedNumbers().ToString());
+            _console.WriteLine("The sum of all numbers inputed is: " + numberOperations.SumThemAll(numberList).ToString());
 
 
         }

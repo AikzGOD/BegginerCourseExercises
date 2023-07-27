@@ -31,9 +31,8 @@ namespace BegginerCourse.FourthExercises
         {
             _console.WriteLine(@"Insert list of numbers seperated by hyphen('5-6-7-8-9' or '20-19-18-17-16') : ");
             string userInput = _console.ReadLine();
-            _stringOperations.SeparateStringValuesWithHyphen(userInput);
 
-            if (_numberOperations.NumbersAreConsecutive(_stringOperations.SeparateStringValuesWithHyphen(userInput)))
+            if (_numberOperations.NumbersAreConsecutive(userInput.Split('-')))
             {
                 _console.WriteLine("Consecutive");
             }

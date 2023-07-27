@@ -42,7 +42,7 @@ namespace BegginerCourse.FourthExercises
                 if (userInput == "")
                     break;
 
-                _numbers = _stringOperations.SeparateStringValuesWithHyphen(userInput);
+                _numbers = userInput.Split('-');
 
                 for (int i = 0; i < _numbers.Length; i++)
                 {

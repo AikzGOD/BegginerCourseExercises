@@ -59,7 +59,7 @@ namespace BegginerCourse.FifthExercises
                     while (line != null)
                     {
                         Console.WriteLine(line);
-                        words = _stringOperations.SeparateStringValuesWithSpaces(line);
+                        string [] words = line.Split(' ');
                         wordCount += words.Length;
 
                         line = sr.ReadLine();

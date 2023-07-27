@@ -5,9 +5,13 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BegginerCourse", "HelloWorld\BegginerCourse.csproj", "{B8560F71-00DB-4845-84BA-78F2311AEF77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedLimit.nUnitTests", "SpeedLimit.nUnitTests\SpeedLimit.nUnitTests.csproj", "{6D85BE1C-E151-441B-8849-9CDB7BDC77DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedLimit.nUnitTests", "SpeedLimit.nUnitTests\SpeedLimit.nUnitTests.csproj", "{6D85BE1C-E151-441B-8849-9CDB7BDC77DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberValidator.nUnitTests", "NumberValidator.nUnitTests\NumberValidator.nUnitTests.csproj", "{F6922895-E04E-47DC-9E76-7DF80B939FEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberValidator.nUnitTests", "NumberValidator.nUnitTests\NumberValidator.nUnitTests.csproj", "{F6922895-E04E-47DC-9E76-7DF80B939FEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberOperations.nUnitTests", "NumberOperations.nUnitTests\NumberOperations.nUnitTests.csproj", "{48E86345-4779-40D6-B28F-6277DC5940E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringOperations.nUnitTests", "StringOperations.nUnitTests\StringOperations.nUnitTests.csproj", "{ABD2ECD8-6720-400E-A5FD-DA6C8C81E3C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{F6922895-E04E-47DC-9E76-7DF80B939FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6922895-E04E-47DC-9E76-7DF80B939FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6922895-E04E-47DC-9E76-7DF80B939FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E86345-4779-40D6-B28F-6277DC5940E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E86345-4779-40D6-B28F-6277DC5940E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E86345-4779-40D6-B28F-6277DC5940E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E86345-4779-40D6-B28F-6277DC5940E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD2ECD8-6720-400E-A5FD-DA6C8C81E3C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD2ECD8-6720-400E-A5FD-DA6C8C81E3C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD2ECD8-6720-400E-A5FD-DA6C8C81E3C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD2ECD8-6720-400E-A5FD-DA6C8C81E3C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

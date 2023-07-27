@@ -44,17 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Operations\ConsoleIO.cs" />
-    <Compile Include="FifthExercises\TwentiethExercise.cs" />
-    <Compile Include="FifthExercises\TwentyFirstExercise.cs" />
-    <Compile Include="FirstExercises\FirstExercise.cs" />
-    <Compile Include="FirstExercises\FourthExercise.cs" />
-    <Compile Include="FirstExercises\SecondExercise.cs" />
-    <Compile Include="FirstExercises\ThirdExercise.cs" />
-    <Compile Include="FourthExercises\EighteenthExercise.cs" />
-    <Compile Include="FourthExercises\FifteenthExercise.cs" />
-    <Compile Include="FourthExercises\NineteenthExercise.cs" />
-    <Compile Include="FourthExercises\SeventeenthExercise.cs" />
-    <Compile Include="FourthExercises\SixteenthExercise.cs" />
+    <Compile Include="5_FifthExercises\20_TwentiethExercise.cs" />
+    <Compile Include="5_FifthExercises\21_TwentyFirstExercise.cs" />
+    <Compile Include="1_FirstExercises\1_FirstExercise.cs" />
+    <Compile Include="1_FirstExercises\4_FourthExercise.cs" />
+    <Compile Include="1_FirstExercises\2_SecondExercise.cs" />
+    <Compile Include="1_FirstExercises\3_ThirdExercise.cs" />
+    <Compile Include="4_FourthExercises\18_EighteenthExercise.cs" />
+    <Compile Include="4_FourthExercises\15_FifteenthExercise.cs" />
+    <Compile Include="4_FourthExercises\19_NineteenthExercise.cs" />
+    <Compile Include="4_FourthExercises\17_SeventeenthExercise.cs" />
+    <Compile Include="4_FourthExercises\16_SixteenthExercise.cs" />
     <Compile Include="Interfaces\IConsoleIO.cs" />
     <Compile Include="Interfaces\IExercise.cs" />
     <Compile Include="Image.cs" />
@@ -65,18 +65,18 @@
     <Compile Include="Operations\NumberValidator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FirstExercises\SpeedCamera.cs" />
-    <Compile Include="SecondExercises\EighthExercise.cs" />
-    <Compile Include="SecondExercises\FifthExercise.cs" />
-    <Compile Include="SecondExercises\NinthExercise.cs" />
-    <Compile Include="SecondExercises\SeventhExercise.cs" />
-    <Compile Include="SecondExercises\SixthExercise.cs" />
+    <Compile Include="1_FirstExercises\SpeedCamera.cs" />
+    <Compile Include="2_SecondExercises\8_EighthExercise.cs" />
+    <Compile Include="2_SecondExercises\5_FifthExercise.cs" />
+    <Compile Include="2_SecondExercises\9_NinthExercise.cs" />
+    <Compile Include="2_SecondExercises\7_SeventhExercise.cs" />
+    <Compile Include="2_SecondExercises\6_SixthExercise.cs" />
     <Compile Include="Operations\StringOperations.cs" />
-    <Compile Include="ThirdExercises\EleventhExercise.cs" />
-    <Compile Include="ThirdExercises\FourteenthExercise.cs" />
-    <Compile Include="ThirdExercises\TenthExercise.cs" />
-    <Compile Include="ThirdExercises\ThirteenthExercise.cs" />
-    <Compile Include="ThirdExercises\TwelfthExercise.cs" />
+    <Compile Include="3_ThirdExercises\11_EleventhExercise.cs" />
+    <Compile Include="3_ThirdExercises\14_FourteenthExercise.cs" />
+    <Compile Include="3_ThirdExercises\10_TenthExercise.cs" />
+    <Compile Include="3_ThirdExercises\13_ThirteenthExercise.cs" />
+    <Compile Include="3_ThirdExercises\12_TwelfthExercise.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -38,7 +38,7 @@ namespace BegginerCourse.FirstExercises
             //Verify if the userInputs are numbers
             if (_numberValidator.IsNumberValid(carSpeedInput, out int carSpeed) && _numberValidator.IsNumberValid(speedLimitInput, out int speedLimit))
             {
-                SpeedCamera speedCamera = new SpeedCamera(speedLimit , carSpeed);
+                SpeedCamera speedCamera = new SpeedCamera(carSpeed , speedLimit);
                 _console.WriteLine(speedCamera.RunSpeedCamera());
             }
             else

@@ -43,7 +43,7 @@ namespace BegginerCourse.FourthExercises
                 return;
             }
 
-            _userDate = _stringOperations.SeparateStringValuesWithColon(userInput);
+            _userDate = userInput.Split(':');
 
             if (_userDate.Length != 2)
             {

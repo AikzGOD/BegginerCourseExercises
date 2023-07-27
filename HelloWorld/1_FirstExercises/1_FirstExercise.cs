@@ -36,7 +36,7 @@ namespace BegginerCourse.FirstExercises
                 //If statement to check if userNuber is higher than 10, or less than 0
                 if (number < 0 || number > 10)
                 {
-                    _console.WriteLine("Invalid");
+                    _console.Warning("Invalid");
                 }
                 else
                 {

@@ -33,8 +33,9 @@ namespace BegginerCourse.SecondExercises
 
             //Get userInput
             string userInput = _console.ReadLine();
+            var numbers = userInput.Split(',');
 
-            foreach (string numero in _stringOperations.SeparateStringValuesWithComma(userInput))
+            foreach (string numero in numbers)
             {
                 int number = int.Parse(numero);
 
