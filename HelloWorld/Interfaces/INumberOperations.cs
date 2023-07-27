@@ -11,5 +11,6 @@ namespace BegginerCourse
         int SummedNumbers();
 
         int CalculateFactorialNumber(int number);
+
     }
 }

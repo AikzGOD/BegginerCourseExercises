@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelloWorld.SecondExercises
+namespace BegginerCourse.SecondExercises
 {
     internal class SeventhExercise : IExercise
     {
@@ -17,6 +17,12 @@ namespace HelloWorld.SecondExercises
             _console = console;
         }
 
+        /// <summary>
+        ///Write a program and ask the user to enter a number.
+        ///Compute the factorial of the number and print it on the console.
+        ///For example, if the user enters 5, the program should create 5x4x3x2x1
+        ///and the display it as 5! = 120.
+        /// </summary>
         public void Run()
         {
             //Ask the user a number

@@ -9,6 +9,8 @@ namespace BegginerCourse
     internal class NumberOperations : INumberOperations
     {
         private int _sumOfNumbers;
+
+        private List<int> _numbers;
         
 
         public int CalculateFactorialNumber(int number)
@@ -45,5 +47,26 @@ namespace BegginerCourse
             _sumOfNumbers = sum;
             return sum;
         }
+
+        public bool NumbersAreConsecutive(string[] numbers)
+        {
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                int currentNumber = int.Parse(numbers[i]);
+                int nextNumber = int.Parse(numbers[i + 1]);
+
+                //Check if it is consecutive
+                if (nextNumber != currentNumber + 1 && nextNumber != currentNumber - 1)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+
+
+        }
+
+        
     }
 }

@@ -12,5 +12,7 @@ namespace BegginerCourse
         void WriteLine(string line);
         void ClearScreen();
         void Warning(string message);
+
+        void Write(string line);
     }
 }

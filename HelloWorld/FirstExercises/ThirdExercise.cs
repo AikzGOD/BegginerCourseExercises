@@ -18,6 +18,10 @@ namespace BegginerCourse.FirstExercises
             _numberValidator = new NumberValidator();
         }
 
+        /// <summary>
+        /// Write a program and ask the user to enter the width and height of an Image.
+        /// Then tell if the image is landscape or portrait
+        /// </summary>
         public void Run()
         {
             //Ask the user the height of the image

@@ -43,25 +43,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleIO.cs" />
+    <Compile Include="Operations\ConsoleIO.cs" />
+    <Compile Include="FifthExercises\TwentiethExercise.cs" />
+    <Compile Include="FifthExercises\TwentyFirstExercise.cs" />
     <Compile Include="FirstExercises\FirstExercise.cs" />
     <Compile Include="FirstExercises\FourthExercise.cs" />
     <Compile Include="FirstExercises\SecondExercise.cs" />
     <Compile Include="FirstExercises\ThirdExercise.cs" />
-    <Compile Include="IConsoleIO.cs" />
-    <Compile Include="IExercise.cs" />
+    <Compile Include="FourthExercises\EighteenthExercise.cs" />
+    <Compile Include="FourthExercises\FifteenthExercise.cs" />
+    <Compile Include="FourthExercises\NineteenthExercise.cs" />
+    <Compile Include="FourthExercises\SeventeenthExercise.cs" />
+    <Compile Include="FourthExercises\SixteenthExercise.cs" />
+    <Compile Include="Interfaces\IConsoleIO.cs" />
+    <Compile Include="Interfaces\IExercise.cs" />
     <Compile Include="Image.cs" />
-    <Compile Include="ImageFunctions.cs" />
-    <Compile Include="INumberOperations.cs" />
-    <Compile Include="INumberValidator.cs" />
-    <Compile Include="NumberOperations.cs" />
-    <Compile Include="NumberValidator.cs" />
+    <Compile Include="Operations\ImageFunctions.cs" />
+    <Compile Include="Interfaces\INumberOperations.cs" />
+    <Compile Include="Interfaces\INumberValidator.cs" />
+    <Compile Include="Operations\NumberOperations.cs" />
+    <Compile Include="Operations\NumberValidator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FirstExercises\SpeedCamera.cs" />
+    <Compile Include="SecondExercises\EighthExercise.cs" />
     <Compile Include="SecondExercises\FifthExercise.cs" />
+    <Compile Include="SecondExercises\NinthExercise.cs" />
     <Compile Include="SecondExercises\SeventhExercise.cs" />
     <Compile Include="SecondExercises\SixthExercise.cs" />
+    <Compile Include="Operations\StringOperations.cs" />
+    <Compile Include="ThirdExercises\EleventhExercise.cs" />
+    <Compile Include="ThirdExercises\FourteenthExercise.cs" />
+    <Compile Include="ThirdExercises\TenthExercise.cs" />
+    <Compile Include="ThirdExercises\ThirteenthExercise.cs" />
+    <Compile Include="ThirdExercises\TwelfthExercise.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -19,6 +19,10 @@ namespace BegginerCourse.FirstExercises
 
         }
 
+        /// <summary>
+        /// Write a program which takes two numbers from the console
+        /// and displays the maximum of the two.
+        /// </summary>
         public void Run()
         {
             string number1,number2;

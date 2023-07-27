@@ -17,6 +17,14 @@ namespace BegginerCourse.FirstExercises
             _numberValidator = new NumberValidator();
         }
 
+        /// <summary>
+        /// Write a program for a speed camera. Ask the user for the speed limit and once set,
+        /// ask the user for the speed of a car. if the value is less than the limit display "Ok"
+        /// if the value is above the limit the program should calculate the number of demerit
+        /// points. For every 5km/hr above the speed limit, 1 demerit point should be incurred
+        /// and displayed. If the number of the demerit points is above 12, the program should
+        /// display "License Suspended"
+        /// </summary>
         public void Run()
         {
             //Ask the car Speed

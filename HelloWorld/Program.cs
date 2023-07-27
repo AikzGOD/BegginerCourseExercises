@@ -1,1032 +1,134 @@
 ﻿using BegginerCourse.FirstExercises;
 using BegginerCourse.SecondExercises;
-using HelloWorld.SecondExercises;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using BegginerCourse.FifthExercises;
+using BegginerCourse.FourthExercises;
+using HelloWorld.ThirdExercises;
 
 namespace BegginerCourse
 {
     internal partial class Program
     {
-
         static IConsoleIO console = new ConsoleIO();
-
 
         static void Main(string[] args)
         {
-            console.WriteLine("Insira o numero do exercicio que pretende visualizar (1 - 21)\n");
-            console.WriteLine("*Nota - Exercicio 20 e 21 precisam de um path para um ficheiro .txt");
+           DisplayExerciseMenu();
+        }
+
+        static void DisplayExerciseMenu()
+        {
+            console.WriteLine("Insira o número do exercício que pretende visualizar (1 - 21)");
+            console.WriteLine("*Nota - Exercício 20 e 21 precisam de um path para um ficheiro .txt");
 
             string userInput = console.ReadLine();
-            NumberValidator numberValidator = new NumberValidator();
-            
-            if (numberValidator.IsMainNumberValid(userInput , out int number))
+            if (int.TryParse(userInput, out int number))
             {
                 switch (number)
                 {
                     case 1:
-                        console.ClearScreen();
-                        Exercise1();
+                        RunExercise(new FirstExercise(console));
                         break;
 
                     case 2:
-                        console.ClearScreen();
-                        Exercise2();
+                        RunExercise(new SecondExercise(console));
                         break;
 
                     case 3:
-                        console.ClearScreen();
-                        Exercise3();
+                        RunExercise(new ThirdExercise(console));
                         break;
 
                     case 4:
-                        console.ClearScreen();
-                        Exercise4();
+                        RunExercise(new FourthExercise(console));
                         break;
 
                     case 5:
-                        console.ClearScreen();
-                        Exercise5();
+                        RunExercise(new FifthExercise(console));
                         break;
 
                     case 6:
-                        console.ClearScreen();
-                        Exercise6();
+                        RunExercise(new SixthExercise(console));
                         break;
 
                     case 7:
-                        console.ClearScreen();
-                        Exercise7();
+                        RunExercise(new SeventhExercise(console));
                         break;
 
                     case 8:
-                        console.ClearScreen();
-                        Exercise8();
+                        RunExercise(new EighthExercise(console));
                         break;
 
                     case 9:
-                        console.ClearScreen();
-                        Exercise9();
+                        RunExercise(new NinthExercise(console));
                         break;
 
                     case 10:
-                        console.ClearScreen();
-                        Exercise10();
+                        RunExercise(new TenthExercise(console));
                         break;
 
                     case 11:
-                        console.ClearScreen();
-                        Exercise11();
+                        RunExercise(new EleventhExercise(console));
                         break;
 
                     case 12:
-                        console.ClearScreen();
-                        Exercise12();
+                        RunExercise(new TwelfthExercise(console));
                         break;
 
                     case 13:
-                        console.ClearScreen();
-                        Exercise13();
+                        RunExercise(new ThirteenthExercise(console));
                         break;
 
                     case 14:
-                        console.ClearScreen();
-                        Exercise14();
+                        RunExercise(new FourteenthExercise(console));
                         break;
 
                     case 15:
-                        console.ClearScreen();
-                        Exercise15();
-                        break;
+                        RunExercise(new FifteenthExercise(console));
+                        break; ;
 
                     case 16:
-                        console.ClearScreen();
-                        Exercise16();
+                        RunExercise(new EighteenthExercise(console));
                         break;
 
                     case 17:
-                        console.ClearScreen();
-                        Exercise17();
+                        RunExercise(new SeventeenthExercise(console));
                         break;
 
                     case 18:
-                        console.ClearScreen();
-                        Exercise18();
+                        RunExercise(new EighteenthExercise(console));
                         break;
 
                     case 19:
-                        console.ClearScreen();
-                        Exercise19();
+                        RunExercise(new NineteenthExercise(console));
                         break;
 
                     case 20:
-                        console.ClearScreen();
-                        Exercise20();
+                        RunExercise(new TwentiethExercise(console));
                         break;
 
                     case 21:
+                        RunExercise(new TwentyFirstExercise(console));
+                        break; ;
+
+                    default:
                         console.ClearScreen();
-                        Exercise21();
+                        console.Warning("Insira numero válido");
+                        DisplayExerciseMenu();
                         break;
                 }
+                
             }
             else
             {
                 console.ClearScreen();
                 console.Warning("Insira numero válido");
-                Main(args);
+                DisplayExerciseMenu();
             }
-
         }
 
-        #region First Exercises
-
-        #region Exercise 1
-
-        /// <summary>
-        /// Exercise Write a program that asks a number between 1 and 10, if the inserted
-        /// number is valid, display "Valid" on the console. Otherwise, display "Invalid"
-        /// No Verification needed (Assume that the user enters a value in the format the program expects)
-        /// </summary>
-        public static void Exercise1()
+        static void RunExercise(IExercise exercise)
         {
-            FirstExercise firstExercise = new FirstExercise(console);
-            firstExercise.Run();
+            console.ClearScreen();
+            exercise.Run();
         }
-
-        #endregion
-
-        #region Exercise 2
-        /// <summary>
-        /// Write a program which takes two numbers from the console
-        /// and displays the maximum of the two.
-        /// </summary>
-        public static void Exercise2()
-        {
-            SecondExercise secondExercise = new SecondExercise(console);
-            secondExercise.Run();
-        }
-
-        #endregion
-
-        #region Exercise 3
-        /// <summary>
-        /// Write a program and ask the user to enter the width and height of an Image.
-        /// Then tell if the image is landscape or portrait
-        /// </summary>
-        public static void Exercise3()
-        {
-            ThirdExercise thirdExercise = new ThirdExercise(console);
-            thirdExercise.Run();
-
-        }
-
-        #endregion
-
-        #region Exercise 4
-        /// <summary>
-        /// Write a program for a speed camera. Ask the user for the speed limit and once set,
-        /// ask the user for the speed of a car. if the value is less than the limit display "Ok"
-        /// if the value is above the limit the program should calculate the number of demerit
-        /// points. For every 5km/hr above the speed limit, 1 demerit point should be incurred
-        /// and displayed. If the number of the demerit points is above 12, the program should
-        /// display "License Suspended"
-        /// </summary>
-        public static void Exercise4()
-        {
-            FourthExercise fourthExercise = new FourthExercise(console);
-            fourthExercise.Run();
-        }
-
-
-
-        #endregion
-
-        #endregion
-
-        #region Second Exercises
-
-        #region Exercise 5
-
-        /// <summary>
-        /// Write a program to count how many numbers between 1 and 100 are divisible
-        /// by 3 with no remainder. Display the count
-        /// </summary>
-        public static void Exercise5()
-        {
-            FifthExercise fifthExercise = new FifthExercise(console);
-            fifthExercise.Run();
-        }
-
-        #endregion
-
-        #region Exercise 6
-
-        /// <summary>
-        /// Write a program and continuously ask the user to enter
-        /// a number or ok to exit. Calculate the sum of all the previously entered
-        /// numbers and display it on the console.
-        /// </summary>
-        public static void Exercise6()
-        {
-            SixthExercise sixthExercise  = new SixthExercise(console);
-            sixthExercise.Run();
-        }
-
-        #endregion
-
-        #region Exercise 7
-
-        /// <summary>
-        ///Write a program and ask the user to enter a number.
-        ///Compute the factorial of the number and print it on the console.
-        ///For example, if the user enters 5, the program should create 5x4x3x2x1
-        ///and the display it as 5! = 120.
-        /// </summary>
-        public static void Exercise7()
-        {
-            SeventhExercise seventhExercise = new SeventhExercise(console);
-            seventhExercise.Run();
-
-
-        }
-
-        #endregion
-
-        #region Exercise 8
-
-        /// <summary>
-        /// Write a program that picks a random number between 1 and 10. give the user
-        /// 4 chances to guess the number. if the user guesses the number display "You won"
-        /// otherwise, display "You lost"
-        /// </summary>
-        public static void Exercise8()
-        {
-            #region Exercise 8
-
-            Random random = new Random();
-
-            //I put eleven in order to the program also generates the number 10
-            int randomNumber = random.Next(1,11);
-
-            //Number of tries
-            int userTries = 4;
-
-            string userInput = "";
-
-            Console.WriteLine("Random number generated : " + randomNumber);
-
-            
-
-            for(int i = 0;  i < userTries; i++)
-            {
-                //Ask the user to guess the number
-                Console.WriteLine("Guess the number between 1 and 10");
-                userInput = Console.ReadLine();
-
-                if (userInput == randomNumber.ToString())
-                {
-                    Console.WriteLine("You Won!!!");
-                    break;
-                }
-
-            }
-            
-            if(userInput != randomNumber.ToString())
-            Console.WriteLine("You Lost!!!");
-
-
-
-            #endregion
-        }
-
-
-        #endregion
-
-        #region Exercise 9
-
-        public static void Exercise9()
-        {
-            #region Exercise 9
-
-            //Write a program and ask the user to enter a series of numbers
-            //seperated by comma. Find the maximum of the numbers and display it
-            //on the console. For example, if the user enters "5,3,8,1,4" the program should
-            //display 8.
-
-
-            Console.WriteLine("Insert numbers divided by a comma");
-
-            string input = Console.ReadLine();
-
-            string[] numbers = input.Split(',');
-
-            int max = 0;
-
-            foreach (string numero in numbers)
-            {
-                int number = int.Parse(numero);
-
-                if (number > max)
-                {
-                    max = number;
-
-                }
-            }
-
-            Console.WriteLine("Max is {0} " , max);
-
-            #endregion
-        }
-
-        #endregion
-
-        #endregion
-
-
-        #region Third Exercises
-
-        #region Exercise 10
-
-        public static void Exercise10()
-        {
-            #region Exercise 10
-
-            //When you post a message on Facebook, depending on the number of people who
-            //like your post, facebook displays different information
-            //If no one likes, doesnt display anything
-            //If only one person likes, it displays [Friend's Name] likes your post
-            //If two people like your post, it displays [Friend 1] and [Friend 2] like your post
-            //If more than two : [Friend 1] , [Friend 2] and [Number of other people] others like your post
-            //
-            //Write a program and continuously ask the user to enter different names, until
-            //the user presses Enter(without supplying a name).
-            //Depending on the number of names provided, display a message based on the above pattern
-
-            List<string> names = new List<string>();
-
-            string userInput;
-
-            do
-            {
-                Console.WriteLine("Please insert a name (Or enter to stop)");
-                userInput = Console.ReadLine();
-
-                names.Add(userInput);
-
-            } while (userInput != "");
-
-
-            Console.WriteLine(names.Count);
-
-
-
-            switch (names.Count)
-            {
-                case 1:
-                    //Shows nothing
-                    break;
-
-                case 2:
-                    //Shows Friend name
-                    console.ClearScreen();
-                    for(int i = 0; i < names.Count -1; i++)
-                    {
-                        Console.WriteLine(names[i] + " Liked your post");
-                    }
-                    break;
-
-                case 3:
-                    //Shows two friend name
-
-                    console.ClearScreen();
-
-                    for (int i = 0; i < names.Count - 1; i++)
-                    {
-
-                        Console.WriteLine(names[i]);
-                    }
-
-                    Console.WriteLine("Liked your post");
-
-                    break;
-
-                default:
-
-                    for (int i = 0; i < 2; i++)
-                    {
-
-                        Console.Write(names[i] + " , ");
-                    }
-
-                    int numberOfLikes = names.Count - 3;
-
-                    Console.WriteLine(" and {0} other people liked your post" , numberOfLikes);
-
-
-                    break;
-
-
-                   
-
-            }
-
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Exercise 11
-
-        public static void Exercise11()
-        {
-            //Write a program and ask the user to enter their name. Use an array to reverse
-            //the name and then store the result in a new string. Display the reversed name on the console
-
-            List<string> names = new List<string>();
-
-            string userInput;
-
-            //Ask the user for a name
-            Console.WriteLine("Insert a name to reverse");
-            userInput = Console.ReadLine();
-
-            char[] letters = userInput.ToCharArray();
-
-
-            for(int i = 0; i < letters.Length;i++)
-            {
-                names.Add(letters[i].ToString());
-            }
-
-            names.Reverse();
-
-            for(int i = 0;i < letters.Length; i++)
-            {
-                Console.Write(names[i]);
-            }
-            Console.WriteLine("");
-
-        }
-
-        #endregion
-
-        #region Exercise 12
-
-        public static void Exercise12()
-        {
-            #region Exercise 12
-
-            //Write a program and ask the user to enter 5 numbers. If a number has been previously
-            //entered, display an error message and ask the user to re-try. Once the user
-            //Successfully enters 5 unique numbers, sort them and display the result on the console
-
-            List <int> numbers = new List<int>();
-
-            int userInput;
-
-
-            for(int i = 0; i < 5; i++)
-            {
-                //Ask number to user
-                Console.WriteLine("Insert a number: ");
-                userInput = int.Parse(Console.ReadLine());
-
-                if (numbers.Contains(userInput))
-                {
-                    Console.WriteLine("Number already in the list!");
-                    i--;
-                }
-                else
-                {
-                    numbers.Add(userInput);
-                }
-
-                //Check if the number already exists
-            }
-
-            numbers.Sort();
-
-            for(int i  =0; i < numbers.Count; i++)
-            {
-                Console.Write(numbers[i]);
-            }
-
-
-
-
-
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Exercise 13
-
-        public static void Exercise13()
-        {
-            #region Exercise 13
-
-            //Write a program and ask the user to keep entering a number until type Quit
-            //The list of numbers may incluide duplicates. Display the unique numbers that the user has entered
-
-            //Ask the user a number ( if the user types "Quit" he will quit the app)
-
-            List<int> numbers = new List<int>();
-            List<int> uniqueNumbers = new List<int>();
-
-
-            string userInput ="";
-
-            while(userInput != "quit")
-            {
-                Console.WriteLine("Insert a number (Or type 'Quit' to exit)");
-                userInput = Console.ReadLine();
-                userInput.ToLower();
-
-                if (!userInput.Equals("quit")) {
-                    numbers.Add(int.Parse(userInput));
-                }
-
-            }
-
-            for(int i =0  ; i < numbers.Count ; i++)
-            {
-                if (!uniqueNumbers.Contains(numbers[i])){
-                    uniqueNumbers.Add(numbers[i]);
-                }
-            }
-
-            for(int i =  0 ; i < uniqueNumbers.Count ; i++)
-            {
-                Console.WriteLine(uniqueNumbers[i]);
-            }
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Exercise 14
-
-        public static void Exercise14()
-        {
-            //Write a program and ask the user to supply a list of comma
-            //seperated numbers(5,1,9,2,10). If the list is empty or includes less than 5 numbers
-            //Display "Invalid List" and ask the user to re-try; otherwise, Display the 3 smallest
-            //numbers in the list
-
-            string userInput = "";
-
-            bool listIsCorrect = false;
-
-            List<int> numberList = new List<int>();
-
-            while (listIsCorrect == false)
-            {
-                //Ask user list with numbers
-                Console.WriteLine("Insert a list of numbers 5+ seperated by comma (e.g : 1,2,3): ");
-                userInput = Console.ReadLine();
-
-                string[] numbers = userInput.Split(',');
-
-                //check if the array numbers is less than 5
-                if(numbers.Length < 5)
-                {
-                    console.ClearScreen();
-                    Console.WriteLine("Invalid List, try again");
-                    continue;
-                }
-
-                for( int i = 0 ; i < numbers.Length ; i++)
-                {
-                    numberList.Add(int.Parse(numbers[i]));
-                }
-                
-                listIsCorrect = true;
-
-            }
-            numberList.Sort();
-            
-
-            for(int i =0 ; i < 3 ; i++)
-            {
-                Console.WriteLine(numberList[i].ToString());
-            }
-
-
-        }
-
-        #endregion
-
-
-        #endregion
-
-        #region Fourth Exercises
-
-        #region Exercise 15
-        public static void Exercise15()
-        {
-            #region Exercise 15
-
-            //Write a program and ask the user to enter a few numbers
-            //separated by a hyphen. Work out if the numbers are consecutive.
-            //For example, if the input is "5-6-7-8-9" or "20-19-18-17-16",
-            //Display "Consecutive, otherwise display not Consecutive
-
-            string userInput;
-
-            //Ask the user for numbers
-            Console.WriteLine(@"Insert list of numbers seperated by hyphen('5-6-7-8-9' or '20-19-18-17-16') : ");
-            userInput = Console.ReadLine();
-            string[] numbers = userInput.Split('-');
-
-            for(int i = 0 ; i < numbers.Length - 1 ;i++)
-            {
-                int expectedNumber = int.Parse(numbers[i]);
-                //Check if it is consecutive
-                if (int.Parse(numbers[i + 1]) == (expectedNumber + 1))
-                {
-                    Console.WriteLine("Consecutive");
-                }
-                else if (int.Parse(numbers[i+1]) == (expectedNumber - 1)){
-                    Console.WriteLine("Consecutive");
-                }
-                else
-                {
-                    Console.WriteLine("Not Consecutive");
-                }
-                
-            }
-
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Exercise 16
-
-        public static void Exercise16()
-        {
-            #region Exercise 16
-
-            //Write a program and ask the user to enter a feew numbers seperated by hyphen.
-            //If the user simply presses Enter, without supplying an input, exit immediately
-            //Otherwise, check to see if there are duplicates. If so, display "Duplicate"
-
-            string userInput = "";
-
-            do
-            {
-                Console.WriteLine("Insert numbers seperated by hyphen (1-2-3) (Press enter to leave) : ");
-                userInput = Console.ReadLine();
-
-                if (userInput == "")
-                    break;
-
-                string[] numbers = userInput.Split('-');
-
-                List<string> numberList = new List<string>();
-
-                for (int i = 0; i < numbers.Length; i++)
-                {
-                    if (!numberList.Contains(numbers[i]))
-                    {
-                        numberList.Add(numbers[i]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Duplicate!");
-                        continue;
-                    }
-                }
-            } while (userInput == "");
-
-
-
-
-
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Exercise 17
-        public static void Exercise17()
-        {
-            #region Exercise 17
-
-            //Write a program and ask the user to enter a time value in the
-            //24 - hour time format (e.g 19:00). A valid time should be between
-            //00:00 and 23:59. If the time is valid, display "Ok"; otherwise,
-            //display "Invalid Time". If the user doesn't provide any values,
-            //consider it as invalid time.
-
-            string userInput;
-
-            //Ask the user Input for the time date
-            Console.WriteLine("Enter a time value in hour time format (e.g 19:00) : ");
-            userInput = Console.ReadLine();
-
-            if (String.IsNullOrEmpty(userInput))
-            {
-                Console.WriteLine("Invalid Time");
-                return;
-            }
-
-            string[] userDate = userInput.Split(':');
-
-            if (userDate.Length != 2)
-            {
-                Console.WriteLine("Invalid Time");
-                return;
-            }
-
-            if (int.Parse(userDate[0]) >= 00 && int.Parse(userDate[0]) <= 23 && int.Parse(userDate[1]) >= 00 && int.Parse(userDate[1]) < 59)
-            {
-                Console.WriteLine("Ok");
-            }
-            else
-            {
-                Console.WriteLine("Invalid Time");
-            }
-
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Exercise 18
-
-        public static void Exercise18()
-        {
-            #region Exercise 18
-
-            //Write a program and ask the user to enter a few words seperated by a space.
-            //Use the words to create a variable name with PascalCase.
-            //For example, if the user types:  "number of students", display "NumberOfStudents"
-            //Make sure that the program is not dependent on the input. SO if the user types
-            // "NUMBER OF STUDENTS", the program should still display "NumberOfStudents"
-
-            string userInput;
-
-            Console.WriteLine("Write a few words seperated by a space (e.g 'Number of students') : ");
-            userInput = Console.ReadLine();
-
-            if (String.IsNullOrEmpty(userInput))
-            {
-                Console.WriteLine("Invalid!");
-                return;
-            }
-
-            userInput = userInput.ToLower();
-
-            string[] userWords = userInput.Split(' ');
-
-            for(int i = 0; i < userWords.Length; i++)
-            {
-                userWords[i] = char.ToUpper(userWords[i][0]) + userWords[i].Substring(1).ToLower();
-            }
-
-            string pascalCase = string.Join("", userWords);
-
-            Console.WriteLine(pascalCase);
-
-
-
-
-
-
-
-
-
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Exercise 19
-
-        public static void Exercise19()
-        {
-            //Write a program and ask the user to enter an English word.
-            //Count the number of vowels (a,e,i,o,u) in the word. So if
-            //the user enters "inadequate", the program should display 6
-            //on the console.
-
-            string userInput;
-
-            Console.WriteLine("Insert an English word : ");
-            userInput = Console.ReadLine();
-
-            if (String.IsNullOrEmpty(userInput))
-            {
-                Console.WriteLine("Invalid!");
-                return;
-            }
-
-            userInput = userInput.ToLower().Trim();
-
-
-            int numberOfVowels = 0;
-
-            char[] vowels = new char[] {'a','e', 'i' , 'o' , 'u' };
-
-            for(int i = 0; i < userInput.Length; i++)
-            {
-                if (vowels.Contains(userInput[i]))
-                {
-                    numberOfVowels++;
-                }
-            }
-
-            Console.WriteLine(numberOfVowels);
-
-
-
-
-        }
-
-        #endregion
-
-
-
-
-        #endregion
-
-        #region Fifth Exercises
-
-        #region Exercise 20
-        public static void Exercise20()
-        {
-            #region Exercise 20
-
-            //Write a program that reads a text file and displays
-            //the number of words.
-
-            //Ask the user file Path for .txt file
-
-            Console.WriteLine("Insert a path for an txt file");
-            string userInput = Console.ReadLine();
-            string path = @"";
-
-            path = path + userInput;
-
-            if (String.IsNullOrEmpty(userInput))
-            {
-                console.ClearScreen();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("PathInvalid");
-                Console.ResetColor();
-
-                path = @"";
-
-
-                Exercise20();
-            }
-
-            FileInfo fi = new FileInfo(path);
-
-
-            if(fi.Extension != ".txt")
-            {
-                console.ClearScreen();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("PathInvalid");
-                Console.ResetColor();
-
-                Exercise20();
-            }
-            else
-            {
-                StreamReader sr = new StreamReader(path);
-
-                string line = sr.ReadLine();
-
-                string[] words = null;
-
-
-                while (line != null)
-                {
-                    Console.WriteLine(line);
-                    words = line.Split(' ');
-
-                    line = sr.ReadLine();
-                }
-
-                sr.Close();
-
-                Console.WriteLine("Words in the file : {0}", words.Length);
-            }
-
-            
-
-            #endregion
-
-        }
-
-        #endregion
-
-        #region Exercise 21
-
-        public static void Exercise21()
-        {
-            //Write a program that reads a text file and displays
-            //the longest word in the file
-
-            Console.WriteLine("Insert a path for an txt file");
-            string userInput = Console.ReadLine();
-            string path = @"";
-
-            path = path + userInput;
-
-            if (String.IsNullOrEmpty(userInput))
-            {
-                console.ClearScreen();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("PathInvalid");
-                Console.ResetColor();
-
-                path = @"";
-
-
-                Exercise21();
-            }
-
-            FileInfo fi = new FileInfo(path);
-
-            if (fi.Extension != ".txt")
-            {
-                console.ClearScreen();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("PathInvalid");
-                Console.ResetColor();
-
-                Exercise21();
-            }
-            else
-            {
-                StreamReader sr = new StreamReader(path);
-
-                string line = sr.ReadLine();
-
-                string[] words = null;
-
-
-                while (line != null)
-                {
-                    Console.WriteLine(line);
-                    words = line.Split(' ');
-
-                    line = sr.ReadLine();
-                }
-
-                sr.Close();
-
-                int higherIndex = 0;
-
-                for (int i = 0; i < words.Length - 1; i++)
-                {
-                    if (words[i].Length > words[i + 1].Length)
-                    {
-                        higherIndex = i;
-                    }
-                    else
-                    {
-                        higherIndex = i + 1;
-                    }
-                }
-
-                Console.WriteLine("Maior palavra : " + words[higherIndex].ToString());
-            }
-        }
-
-        #endregion
-
-        #endregion
-
-
-
     }
 }

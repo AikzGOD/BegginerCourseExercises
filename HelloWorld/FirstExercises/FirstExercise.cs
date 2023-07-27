@@ -19,6 +19,11 @@ namespace BegginerCourse.FirstExercises
             _numberValidator = new NumberValidator();
         }
 
+        /// <summary>
+        /// Exercise Write a program that asks a number between 1 and 10, if the inserted
+        /// number is valid, display "Valid" on the console. Otherwise, display "Invalid"
+        /// No Verification needed (Assume that the user enters a value in the format the program expects)
+        /// </summary>
         public void Run()
         {
             _console.WriteLine("Insert a number between 1 and 10");
